@@ -1,3 +1,5 @@
+const express = require('express');
+const router = express.Router();
 const List = require('../model').list;
 const Task = require('../model').task;
 
@@ -27,7 +29,7 @@ router.get('/projectFind', async (req, res) => {
     }
   });
   
-  router.post('projectPost', async (req, res) => {
+  router.post('/projectPost', async (req, res) => {
     try {
       const { title, description, dueDate } = req.body;
       // 创建新的列表实例
@@ -47,7 +49,7 @@ router.get('/projectFind', async (req, res) => {
     }
   });
 
-  router.delete('projectDelete/:projectId', async (req, res) => {
+  router.delete('/projectDelete/:projectId', async (req, res) => {
     const projectId = req.params.projectId;
     try {
       const deletedProject = await List.findByIdAndDelete(projectId);
@@ -61,7 +63,7 @@ router.get('/projectFind', async (req, res) => {
     }
   });
   
-  router.delete('taskDelete/:taskId', async (req, res) => {
+  router.delete('/taskDelete/:taskId', async (req, res) => {
     const taskId = req.params.taskId;
     try {
       const deletedtask = await Task.findByIdAndDelete(taskId);
