@@ -116,6 +116,7 @@ function App() {
 
   async function AddTask(task) {
     try {
+      console.log(task);
       // 使用 axios 或其他适合的库向后端提交任务数据
       await axios.post('https://noteproject-aed31807af45.herokuapp.com/api/list/taskPost', task);
       console.log('Task submitted successfully');
