@@ -15,7 +15,7 @@ function App() {
     async function fetchProjectsAndTasks() {
       try {
         // 获取项目数据
-        const projectResponse = await fetch('http://localhost:3000/api/projectFind');
+        const projectResponse = await fetch('https://noteproject-aed31807af45.herokuapp.com/api/list/projectFind');
         if (!projectResponse.ok) {
           throw new Error('Failed to fetch projects');
         }
@@ -49,7 +49,7 @@ function App() {
   }, []);
 
   async function deleteProject(projectId) {
-    return fetch(`http://localhost:3000/api/projectDelete/${projectId}`, {
+    return fetch(`https://noteproject-aed31807af45.herokuapp.com/api/list/projectAndTaskFind/${projectId}`, {
       method: 'DELETE'
     })
     .then(response => {
@@ -117,7 +117,7 @@ function App() {
   async function AddTask(task) {
     try {
       // 使用 axios 或其他适合的库向后端提交任务数据
-      await axios.post('http://localhost:3000/api/taskPost', task);
+      await axios.post('https://noteproject-aed31807af45.herokuapp.com/api/list/taskPost', task);
       console.log('Task submitted successfully');
       // 成功提交任务后，您可能还需要更新状态或执行其他操作
     } catch (error) {
@@ -134,7 +134,7 @@ function App() {
     try {
       // 使用 axios 或其他适合的库向后端发送删除任务的请求
       console.log(_id);
-      await axios.delete(`http://localhost:3000/api/taskDelete/${_id}`);
+      await axios.delete(`https://noteproject-aed31807af45.herokuapp.com/api/list/taskDelete/${_id}`);
       console.log('Task deleted successfully');
       // 成功删除任务后，您可能还需要更新状态或执行其他操作
     } catch (error) {
