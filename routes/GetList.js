@@ -86,7 +86,6 @@ router.get('/projectFind', async (req, res) => {
       
       // 将 projectId 转换为字符串，然后再转换为 ObjectId
       const projectIdString = String(projectId);
-      console.log(projectIdString);
       const projectIdObjectId = new ObjectId(projectIdString);
 
       // 创建新的任务实例

@@ -8,8 +8,6 @@ export default function SelectedProject({
   onDeleteTask,
 }) {
   const projectId = project ? project.id : null;
-  console.log(projectId);
-
   // 定義獲取任務數據的函數
   async function handleTake() {
     try {
@@ -24,8 +22,6 @@ export default function SelectedProject({
       if (!taskData || !Array.isArray(taskData)) {
         throw new Error('Project data is not valid');
       }
-      console.log(taskData);
-
       // 將獲取的任務數據傳遞給 Tasks 組件
       setTasks(taskData);
     } catch (error) {

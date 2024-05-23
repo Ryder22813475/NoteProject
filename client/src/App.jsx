@@ -20,8 +20,6 @@ function App() {
           throw new Error('Failed to fetch projects');
         }
         const projectData = await projectResponse.json();
-        console.log("客戶端物件:" + JSON.stringify(projectData));
-
         // 检查项目数据是否存在
         if (!projectData || !Array.isArray(projectData)) {
           throw new Error('Project data is not valid');
@@ -40,7 +38,6 @@ function App() {
           selectedProjectId: projectsState.selectedProjectId,
           projects: extractedProjects,
         });
-        console.log(extractedProjects);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -116,7 +113,6 @@ function App() {
 
   async function AddTask(task) {
     try {
-      console.log(task);
       // 使用 axios 或其他适合的库向后端提交任务数据
       await axios.post('https://noteproject-aed31807af45.herokuapp.com/api/list/taskPost', task);
       console.log('Task submitted successfully');
@@ -134,7 +130,6 @@ function App() {
   async function DeleteTask(_id) {
     try {
       // 使用 axios 或其他适合的库向后端发送删除任务的请求
-      console.log(_id);
       await axios.delete(`https://noteproject-aed31807af45.herokuapp.com/api/list/taskDelete/${_id}`);
       console.log('Task deleted successfully');
       // 成功删除任务后，您可能还需要更新状态或执行其他操作
