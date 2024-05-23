@@ -49,7 +49,7 @@ function App() {
   }, []);
 
   async function deleteProject(projectId) {
-    return fetch(`https://noteproject-aed31807af45.herokuapp.com/api/list/projectAndTaskFind/${projectId}`, {
+    return fetch(`https://noteproject-aed31807af45.herokuapp.com/api/list/projectDelete/${projectId}`, {
       method: 'DELETE'
     })
     .then(response => {
