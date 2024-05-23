@@ -14,7 +14,7 @@ export default function SelectedProject({
   async function handleTake() {
     try {
       // 获取项目数据
-      const taskResponse = await fetch(`https://noteproject-aed31807af45.herokuapp.com/api/list/${projectId}`);
+      const taskResponse = await fetch(`https://noteproject-aed31807af45.herokuapp.com/api/list/projectAndTaskFind/${projectId}`);
       if (!taskResponse.ok) {
         throw new Error('Failed to fetch projects');
       }

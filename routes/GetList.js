@@ -19,6 +19,7 @@ router.get('/projectFind', async (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
     }
   });
+  
   router.get('/projectAndTaskFind/:projectId', async (req, res) => {
     try {
       const projectId = req.params.projectId;
