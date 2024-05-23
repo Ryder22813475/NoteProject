@@ -38,14 +38,14 @@ export default function SelectedProject({
     await onAddTask(text); // 調用添加任務的回調函數
     setTimeout(() => {
     handleTake(); // 重新獲取任務數據
-  }, 10); // 在0.01秒後執行 handleTake
+  }, 1000); // 在0.01秒後執行 handleTake
   }
 
   async function handleDeleteTaskAndUpdate(id) {
   await onDeleteTask(id); // 調用刪除任務的回調函數
   setTimeout(() => {
     handleTake(); // 重新獲取任務數據
-  }, 10); // 在0.01秒後執行 handleTake
+  }, 1000); // 在0.01秒後執行 handleTake
 }
 
 
