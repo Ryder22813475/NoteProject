@@ -77,7 +77,8 @@ router.get('/projectFind', async (req, res) => {
     }
   });
 
-  router.post('taskPost', async (req, res) => {
+
+  router.post('/taskPost', async (req, res) => {
     try {
       const { projectId, text } = req.body;
       
